@@ -4,7 +4,7 @@
 // }
 
 function paraCelsius(grausEmFahrenheit){
-    celsius = (grausEmFahrenheit - 32) * (5 / 9)
+    const celsius = (grausEmFahrenheit - 32) * (5 / 9)
     return console.log(`A temperatura em graus Celsius é de ${celsius.toFixed(1)}º.`)
 }
 

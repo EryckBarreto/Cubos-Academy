@@ -1,5 +1,5 @@
 function velocidadeMedia(distanciaEmMetros, tempoEmSegundos) {
-    velocidadeMediaKmPorHora = distanciaEmMetros / tempoEmSegundos * 3.6
+    const velocidadeMediaKmPorHora = distanciaEmMetros / tempoEmSegundos * 3.6
     return console.log(`Prezado usuário, sua velocidade média atual é de ${velocidadeMediaKmPorHora.toFixed(2)} km/h.`)
 }
 
