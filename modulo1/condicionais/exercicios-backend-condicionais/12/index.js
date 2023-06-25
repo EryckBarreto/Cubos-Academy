@@ -1,4 +1,4 @@
-const diaDaSemana = 7;
+const diaDaSemana = 70;
 
 
 switch (diaDaSemana) {
@@ -23,4 +23,6 @@ switch (diaDaSemana) {
     case 7:
         console.log("Domingo");
         break;
+    default:
+        console.log("Dia da semana não é válido, digite um número entre 1 e 7");
 }
