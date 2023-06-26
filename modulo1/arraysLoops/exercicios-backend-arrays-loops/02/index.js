@@ -1,7 +1,7 @@
 const letras = ["A", "a", "B", "C", "E", "e"];
 
 let soma = 0;
-let letraEncontrada = false
+let letraEncontrada = false;
 
 
 for (let letra of letras) {
