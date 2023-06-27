@@ -6,16 +6,9 @@ const dadosPessoa = {
     apelidos: ["Jr", "Juninho"]
 };
 
+let textoCNH = dadosPessoa.temCNH ? "possui" : "não possui";
 
-if (dadosPessoa.temCNH) {
-    dadosPessoa.temCNH = "possui";
-} else {
-    dadosPessoa.temCNH = "não possui";
-}
-
-
-
-console.log(`${dadosPessoa.nome} tem ${dadosPessoa.idade}, ${dadosPessoa.altura}, ${dadosPessoa.temCNH} CNH e os seguintes apelidos:`);
+console.log(`${dadosPessoa.nome} tem ${dadosPessoa.idade}, ${dadosPessoa.altura}, ${textoCNH} CNH e os seguintes apelidos:`);
 let i = 0;
 while (i < dadosPessoa.apelidos.length) {
     console.log (`- ${dadosPessoa.apelidos[i]}`)
