@@ -7,7 +7,7 @@ const endereco = {
     cidade: "Curitiba",
     estado: "Paraná",
     pais: "Brasil"
-}
+};
 
 const usuario = {
     nome: "Ryu",
@@ -15,6 +15,6 @@ const usuario = {
     telefone: "4136216655",
     data_nascimento: "21/02/1999",
     endereco
-}
+};
 
 console.log(usuario);
