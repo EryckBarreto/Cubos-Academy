@@ -19,17 +19,18 @@ const usuarios = [
         nome: "Antonio",
         pets: ["Naninha"],
     },
-]
+];
 
-const [nome, pets] = usuarios;
 
-for (let i = 0; i < usuarios.pets[i].length; i++) {
+for (let usuario of usuarios) {
 
-    
-    if (usuarios[i].pets.length < 1) {
+const {nome, pets} = usuario;
+
+
+    if (pets.length < 1) {
         console.log(`Sou ${nome} e tenho nenhum pet.`);
-    } else if (usuarios[i].pets.length === 1) {
-        console.log(`Sou ${nome} e tenho 1 pet.`);
+    } else if (usuario.pets.length === 1) {
+        console.log(`Sou ${nome} e tenho ${pets.length} pet.`);
     } else {
         console.log(`Sou ${nome} e tenho ${pets.length} pets.`);
     }
