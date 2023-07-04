@@ -83,17 +83,20 @@ const novoTenis = {
 }
 
 function addProdutoAoCarrinho(carrinho, produto) {
-    for (let item of carrinho.produtos) {
-        if (item.id === produto.id) {
-            item.qtd += produto.qtd;
-            break;
-        } else {
-            carrinho.produtos.push(produto);
+    let itemExiste = -1;
+    for (let i = 0; i < carrinho.produtos.length; i++) {
+        if (carrinho.produtos[i].id === produto.id) {
+            itemExiste = i;
             break;
         }
+    }
+    if (itemExiste === -1) {
+        carrinho.produtos.push(produto);
+    } else {
+        carrinho.produtos[itemExiste].qtd += produto.qtd;
     }
 };
 
 addProdutoAoCarrinho(carrinho, novaBermuda);
 addProdutoAoCarrinho(carrinho, novoTenis);
-console.log(carrinho.calcularDesconto());
+console.log(carrinho.produtos);
