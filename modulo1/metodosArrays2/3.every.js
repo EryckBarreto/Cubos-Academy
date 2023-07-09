@@ -9,4 +9,4 @@ const resultado = numeros.every((numero) => {
     return numero < 5;
 });
 
-console.log(resultado);
+console.log(resultado); 
