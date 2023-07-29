@@ -1,8 +1,8 @@
 const express = require("express");
 const rotas = express();
-const {listarInstrutores} = require("./controladores/instrutores")
+const {listarInstrutores, obterInstrutor} = require("./controladores/instrutores")
 
 rotas.get("/instrutores", listarInstrutores);
-
+rotas.get("/instrutores/:id", obterInstrutor)
 
 module.exports = rotas;
