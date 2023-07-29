@@ -65,13 +65,31 @@ const atualizarInstrutor = (requisicao, resposta) => {
     instrutor.email = email;
     instrutor.status = status;
 
-    return resposta.status(203).send();
+    return resposta.status(204).send();
 
+};
+
+const atualizarStatusInstrutor = (requisicao, resposta) => {
+    const {id} = requisicao.params;
+    const {status} = requisicao.body;
+
+    const instrutor = instrutores.find((instrutor) => {
+        return instrutor.id === Number(id);
+    });
+
+    if (!instrutor) {
+        return resposta.status(404).json({mensagem: "Instrutor não encontrado."});
+    };
+
+    instrutor.status = status;
+
+    return resposta.status(204).send();
 };
 
 module.exports = {
     listarInstrutores,
     obterInstrutor,
     cadastrarInstrutor,
-    atualizarInstrutor
+    atualizarInstrutor,
+    atualizarStatusInstrutor
 };
