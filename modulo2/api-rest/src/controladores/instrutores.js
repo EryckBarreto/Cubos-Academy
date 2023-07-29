@@ -1,5 +1,4 @@
-const {instrutores} = require("../bancoDeDados");
-let {identificadorInstrutor} = require("../bancoDeDados");
+let {instrutores, identificadorInstrutor} = require("../bancoDeDados");
 
 const listarInstrutores = (requisicao, resposta) => {
     return resposta.json(instrutores);
@@ -86,10 +85,29 @@ const atualizarStatusInstrutor = (requisicao, resposta) => {
     return resposta.status(204).send();
 };
 
+const deletarInstrutor = (requisicao, resposta) => {
+    const {id} = requisicao.params;
+
+    const instrutor = instrutores.find((instrutor) => {
+        return instrutor.id === Number(id);
+    });
+
+    if (!instrutor) {
+        return resposta.status(404).json({mensagem: "Instrutor não encontrado."});
+    };
+
+    instrutores = instrutores.filter((instrutor) => {
+        return instrutor.id !== Number(id);
+    });
+
+    return resposta.status(204).send();
+};
+
 module.exports = {
     listarInstrutores,
     obterInstrutor,
     cadastrarInstrutor,
     atualizarInstrutor,
-    atualizarStatusInstrutor
+    atualizarStatusInstrutor,
+    deletarInstrutor
 };
