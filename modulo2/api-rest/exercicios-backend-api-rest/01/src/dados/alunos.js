@@ -1,5 +1,3 @@
 const alunos = [];
 
-module.exports = {
-    alunos
-};
+module.exports = alunos;
