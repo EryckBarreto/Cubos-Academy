@@ -1,3 +1,6 @@
-const alunos = [];
+const bancoDeDadosAlunos = {
+    idAluno: 1,
+    alunos: []
+};
 
-module.exports = alunos;
+module.exports = bancoDeDadosAlunos;
