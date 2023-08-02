@@ -1,18 +1,22 @@
-const { getCityFromZipcode } = require("utils-playground");
+const { getCityFromZipcode, getStateFromZipcode } = require("utils-playground");
 
-// getCityFromZipcode("80010000").then(cidade => {
+// const cidade = getCityFromZipcode();
+
+// cidade.then(cidade => {
 //     console.log(cidade);
-// }).catch((erro) => {
-//     console.log(erro);
 // });
 
-const cidade = getCityFromZipcode();
+// cidade.catch(erro => {
+//     console.log(erro.message);
+// })
 
-cidade.then(cidade => {
+getCityFromZipcode("80010000").then(cidade => {
     console.log(cidade);
+    getStateFromZipcode("80010000").then(uf => {
+        console.log(uf);
+    });
+}).catch((erro) => {
+    console.log(erro);
 });
 
-cidade.catch(erro => {
-    console.log(erro.message);
-})
 
