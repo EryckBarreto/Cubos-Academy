@@ -1,0 +1,17 @@
+{
+    "vendas": [{
+        "produto": {
+            "id": 1,
+            "nome": "TV Samsung 4K",
+            "valor": 129900
+        },
+        "quantidade": 5
+    }, {
+        "produto": {
+            "id": 2,
+            "nome": "Notebook Dell",
+            "valor": 399990
+        },
+        "quantidade": 3
+    }]
+}
