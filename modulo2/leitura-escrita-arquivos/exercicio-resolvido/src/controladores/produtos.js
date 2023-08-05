@@ -35,7 +35,7 @@ const registroVendas = async (req, res) => {
     return res.status(201).json({mensagem: "Venda registrada com sucesso."});
 
     } catch (erro) {
-        return res.json(`Deu erro: ${erro.message}`);
+        return res.status(500).json(`Deu erro: ${erro.message}`);
     }
 
 }
