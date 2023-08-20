@@ -41,4 +41,40 @@ ALTER TABLE usuarios
 ADD COLUMN situacao
 BOOLEAN DEFAULT true;
 
+UPDATE usuarios
+SET
+situacao = false
+WHERE email = 'montes.nascetur@odiotristique.co.uk';
+
+UPDATE usuarios
+SET
+senha = 'k9P31H1O'
+WHERE email = 'risus.Duis@eget.ca';
+
+ALTER TABLE usuarios
+DROP COLUMN idade,
+ADD COLUMN data_nascimento date;
+
+UPDATE usuarios
+SET data_nascimento = '1991-09-29'
+WHERE email = 'auctor@duiFuscediam.edu';
+
+UPDATE usuarios
+SET data_nascimento = '1988-11-02'
+WHERE email = 'nec.metus.facilisis@vitaealiquet.edu';
+
+DELETE FROM usuarios
+WHERE data_nascimento IS NULL;
+
+ALTER TABLE usuarios
+ALTER COLUMN data_nascimento 
+SET NOT NULL;
+
+INSERT INTO usuarios 
+(nome, data_nascimento, email, senha)
+VALUES
+('Tate I. Dean', '1989-05-01', 'Nunc@etmagnis.edu', 'd3V25D6Y'),
+('Arsenio K. Harmon', '1985-10-23', 'adipiscing.elit@turpis.com', 'm3T58S0C');
+
+
 SELECT * FROM usuarios;
