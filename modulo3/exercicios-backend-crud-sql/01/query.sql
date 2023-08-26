@@ -1,4 +1,4 @@
-]CREATE DATABASE exercicio_crud_sql;
+CREATE DATABASE exercicio_crud_sql;
 
 create table usuarios (
 	id serial,
