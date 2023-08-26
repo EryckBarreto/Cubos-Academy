@@ -77,4 +77,4 @@ VALUES
 ('Arsenio K. Harmon', '1985-10-23', 'adipiscing.elit@turpis.com', 'm3T58S0C');
 
 
-SELECT * FROM usuarios;
+SELECT * FROM usuarios; 
