@@ -15,12 +15,19 @@ app.get('/', async (req, res) => {
         // const query = 'UPDATE empresas SET site = $1 WHERE id = $2'
         // const params = ['www.cakewalk.com', 1];
 
+        // const query = `
+        //     SELECT empresas.id AS empresaId, filiais.id AS filialID, empresas.nome, filiais.pais, pessoas.nome AS funcionario 
+        //     FROM empresas
+        //     INNER JOIN filiais
+        //     ON empresas.id = filiais.empresa_id
+        //     JOIN pessoas ON pessoas.empresa_id = empresas.id;
+        // `
+
         const query = `
-            SELECT empresas.id AS empresaId, filiais.id AS filialID, empresas.nome, filiais.pais, pessoas.nome AS funcionario 
-            FROM empresas
-            INNER JOIN filiais
-            ON empresas.id = filiais.empresa_id
-            JOIN pessoas ON pessoas.empresa_id = empresas.id;
+            SELECT e.id AS empresaId, f.id AS filialId, e.nome, f.pais 
+            FROM empresas e
+            LEFT JOIN filiais f
+            ON e.id = f.empresa_id;
         `
 
         const resultado = await pool.query(query);
