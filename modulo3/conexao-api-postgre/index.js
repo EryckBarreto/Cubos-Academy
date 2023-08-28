@@ -23,10 +23,17 @@ app.get('/', async (req, res) => {
         //     JOIN pessoas ON pessoas.empresa_id = empresas.id;
         // `
 
+        // const query = `
+        //     SELECT e.id AS empresaId, f.id AS filialId, e.nome, f.pais 
+        //     FROM empresas e
+        //     LEFT JOIN filiais f
+        //     ON e.id = f.empresa_id;
+        // `
+
         const query = `
             SELECT e.id AS empresaId, f.id AS filialId, e.nome, f.pais 
             FROM empresas e
-            LEFT JOIN filiais f
+            FULL JOIN filiais f
             ON e.id = f.empresa_id;
         `
 
