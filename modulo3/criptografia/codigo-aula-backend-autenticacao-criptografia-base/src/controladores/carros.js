@@ -1,9 +1,11 @@
 const pool = require('../conexao')
+const jwt = require('jsonwebtoken')
+const senhaJwt = require('../senhaJwt')
 
 const listarCarros = async (req, res) => {
-	try {
-		const { rows } = await pool.query('select * from carros')
 
+	try {		
+		const { rows } = await pool.query('select * from carros')
 		return res.json(rows)
 	} catch (error) {
 		return res.status(500).json('Erro interno do servidor')

@@ -6,12 +6,17 @@ const {
 	atualizarCarro,
 	excluirCarro,
 } = require('./controladores/carros')
-const { cadastrarUsuario, login } = require('./controladores/usuarios')
+const { cadastrarUsuario, login, obterPerfil } = require('./controladores/usuarios')
+const verificarUsuarioLogado = require('./intermediarios/autenticacao')
 
 const rotas = express()
-
+ 
 rotas.post('/usuario', cadastrarUsuario)
 rotas.post('/login', login)
+
+rotas.use(verificarUsuarioLogado)
+
+rotas.get('/perfil', obterPerfil)
 
 rotas.get('/carro', listarCarros)
 rotas.get('/carro/:id', detalharCarro)
